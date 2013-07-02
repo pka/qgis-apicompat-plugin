@@ -1,8 +1,8 @@
 =====================
-
+qgis-apicompat-plugin
 =====================
 
-apicompat is a `QGIS <http://www.qgis.org/>`_ plugin for loading an API compatibility layer.
+apicompat is a `QGIS <http://www.qgis.org/>`_ API compatibility layer loaded as plugin.
 
 
 Copyright and License
