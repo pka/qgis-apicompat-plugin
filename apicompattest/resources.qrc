@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/apicompattest" >
+        <file>icon.png</file>
+    </qresource>
+</RCC>
