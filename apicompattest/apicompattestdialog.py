@@ -33,7 +33,8 @@ class ApiCompatTestDialog(QtGui.QDialog):
         self.ui.setupUi(self)
 
     def write(self, m):
-        self.ui.text.append( m )
+        self.ui.text.moveCursor(QtGui.QTextCursor.End)
+        self.ui.text.insertPlainText( m )
 
     def flush(self):
         pass

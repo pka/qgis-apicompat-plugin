@@ -82,6 +82,7 @@ class ApiCompatTest:
         text = self.dlg.ui.text
         text.append("QGIS " + QGis.QGIS_VERSION)
         text.append("SIP " + sip.SIP_VERSION_STR + " API V" + str(sip.getapi("QVariant")))
+        text.append("\n")
         suite = unittest.TestLoader().loadTestsFromTestCase(TestSettings)
         unittest.TextTestRunner(verbosity=2, stream=self.dlg).run(suite)
 

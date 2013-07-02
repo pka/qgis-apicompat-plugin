@@ -2,8 +2,14 @@
 qgis-apicompat-plugin
 =====================
 
-apicompat is a `QGIS <http://www.qgis.org/>`_ API compatibility layer loaded as plugin.
+`QGIS <http://www.qgis.org/>`_ API compatibility wrapper loaded as plugin.
 
+Loading this compatibility wrapper in enables QGIS 1.8 running plugins written with QGIS 2.0 API.
+
+For information about the API changes see:
+
+- http://hub.qgis.org/wiki/quantum-gis/Python_plugin_API_changes_from_18_to_20
+- http://nathanw.net/2013/06/13/new-qgis-20-api/
 
 Copyright and License
 =====================
