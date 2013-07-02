@@ -33,3 +33,8 @@ class TestSettings(unittest.TestCase):
         value = self.settings.value("testint", 1024, type=int)
         self.assertEqual(type(value), int)
         self.assertEqual(value, 58)
+
+    def test_added_method(self):
+        layer = QgsVectorLayer()
+        features = layer.getFeatures()
+        self.assertEqual(hasattr(features, '__iter__'), True)

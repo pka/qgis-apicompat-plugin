@@ -37,3 +37,15 @@ class ApiCompat:
 
     def run(self):
         pass
+
+
+from decorators import *
+
+def vectorapiv1():
+  return not hasattr(QgsVectorLayer, 'getFeatures')
+
+if vectorapiv1():
+    @add_method(QgsVectorLayer)
+    def getFeatures(self):
+        self.select()
+        return self
