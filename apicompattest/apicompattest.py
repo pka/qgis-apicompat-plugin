@@ -79,10 +79,11 @@ class ApiCompatTest:
         # show the dialog
         self.dlg.show()
 
-        print QGis.QGIS_VERSION
-        print "SIP " + sip.SIP_VERSION_STR + " API V" + str(sip.getapi("QVariant"))
+        text = self.dlg.ui.text
+        text.append("QGIS " + QGis.QGIS_VERSION)
+        text.append("SIP " + sip.SIP_VERSION_STR + " API V" + str(sip.getapi("QVariant")))
         suite = unittest.TestLoader().loadTestsFromTestCase(TestSettings)
-        unittest.TextTestRunner(verbosity=2).run(suite)
+        unittest.TextTestRunner(verbosity=2, stream=self.dlg).run(suite)
 
         # Run the dialog event loop
         result = self.dlg.exec_()

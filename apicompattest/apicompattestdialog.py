@@ -31,3 +31,9 @@ class ApiCompatTestDialog(QtGui.QDialog):
         # Set up the user interface from Designer.
         self.ui = Ui_ApiCompatTest()
         self.ui.setupUi(self)
+
+    def write(self, m):
+        self.ui.text.append( m )
+
+    def flush(self):
+        pass
