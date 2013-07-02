@@ -29,6 +29,10 @@ import resources_rc
 from apicompattestdialog import ApiCompatTestDialog
 
 
+import unittest
+from settings_test import *
+
+
 class ApiCompatTest:
 
     def __init__(self, iface):
@@ -74,10 +78,14 @@ class ApiCompatTest:
     def run(self):
         # show the dialog
         self.dlg.show()
+
+        print QGis.QGIS_VERSION
+        print "SIP " + sip.SIP_VERSION_STR + " API V" + str(sip.getapi("QVariant"))
+        suite = unittest.TestLoader().loadTestsFromTestCase(TestSettings)
+        unittest.TextTestRunner(verbosity=2).run(suite)
+
         # Run the dialog event loop
         result = self.dlg.exec_()
         # See if OK was pressed
         if result == 1:
-            # do something useful (delete the line containing pass and
-            # substitute with your code)
             pass
