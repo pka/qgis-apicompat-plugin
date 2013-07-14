@@ -25,6 +25,24 @@ from qgis.core import *
 
 import __builtin__
 
-def strlist(qstringlist):
-    return list(qstringlist)
-__builtin__.strlist = strlist
+def pystring(qvar):
+    return unicode(qvar.toString())
+__builtin__.pystring = pystring
+def pylist(qvar):
+    return list(qvar.toList())
+__builtin__.pylist = pylist
+def pyint(qvar):
+    return int(qvar.toInt())
+__builtin__.pyint = pyint
+def pyfloat(qvar):
+    return float(qvar.toFloat())
+__builtin__.pyfloat = pyfloat
+def pystringlist(qvar):
+    return stringlist(qvar.toStringList())
+__builtin__.pystringlist = pystringlist
+def pybytearray(qvar):
+    return bytearray(qvar.toByteArray())
+__builtin__.pybytearray = pybytearray
+def pyobject(qvar):
+    return qvar.toPyObject()
+__builtin__.pyobject = pyobject
