@@ -40,20 +40,6 @@ class ApiCompatTest:
         self.iface = iface
         # initialize plugin directory
         self.plugin_dir = QFileInfo(QgsApplication.qgisUserDbFilePath()).path() + "/python/plugins/apicompattest"
-        # initialize locale
-        localePath = ""
-        locale = QSettings().value("locale/userLocale").toString()[0:2]
-
-        if QFileInfo(self.plugin_dir).exists():
-            localePath = self.plugin_dir + "/i18n/apicompattest_" + locale + ".qm"
-
-        if QFileInfo(localePath).exists():
-            self.translator = QTranslator()
-            self.translator.load(localePath)
-
-            if qVersion() > '4.3.3':
-                QCoreApplication.installTranslator(self.translator)
-
         # Create the dialog (after translation) and keep reference
         self.dlg = ApiCompatTestDialog()
 

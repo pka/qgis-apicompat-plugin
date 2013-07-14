@@ -11,6 +11,7 @@
 [general]
 name=apicompattest
 qgisMinimumVersion=1.8
+qgisMaximumVersion=2.99
 description=Test suite for apicompat
 version=0.1
 author=Pirmin Kalberer, Sourcepole

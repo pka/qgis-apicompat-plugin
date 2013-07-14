@@ -41,6 +41,9 @@ def icon():
 def qgisMinimumVersion():
     return "1.8"
 
+def qgisMaximumVersion():
+    return "2.99"
+
 def author():
     return "Pirmin Kalberer, Sourcepole"
 

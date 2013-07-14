@@ -4,7 +4,7 @@ qgis-apicompat-plugin
 
 `QGIS <http://www.qgis.org/>`_ API compatibility wrapper loaded as plugin.
 
-Loading this compatibility wrapper in enables QGIS 1.8 running plugins written with QGIS 2.0 API.
+Loading this compatibility wrapper enables QGIS 1.8 to run plugins written with QGIS 2.0 API.
 
 For information about the API changes see:
 

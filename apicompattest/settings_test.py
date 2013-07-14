@@ -25,8 +25,8 @@ class TestSettings(unittest.TestCase):
         self.assertEqual(value[-1], "s")
 
     def test_int(self):
+        self.settings.setValue("testint", 58)
         if sipv1():
-            self.settings.setValue("testint", 58)
             value,ok = self.settings.value("testint", 1024).toInt()
             self.assertEqual(value, 58)
         #SIP V1+V2

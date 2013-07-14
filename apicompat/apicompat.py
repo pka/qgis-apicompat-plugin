@@ -47,5 +47,17 @@ def vectorapiv1():
 if vectorapiv1():
     @add_method(QgsVectorLayer)
     def getFeatures(self):
-        self.select()
+        self.select([])
         return self
+
+import sip
+
+def sipv1():
+    return sip.getapi("QVariant") == 1
+
+if sipv1():
+    def strlist(qstringlist):
+        return list(qstringlist)
+else:
+    def strlist(strlist):
+        return strlist

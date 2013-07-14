@@ -11,6 +11,7 @@
 [general]
 name=apicompat
 qgisMinimumVersion=1.8
+qgisMaximumVersion=2.99
 description=API compatibility layer
 version=0.1
 author=Pirmin Kalberer, Sourcepole
