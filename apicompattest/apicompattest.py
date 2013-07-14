@@ -28,7 +28,9 @@ import resources_rc
 # Import the code for the dialog
 from apicompattestdialog import ApiCompatTestDialog
 
+import apicompat
 
+import sip
 import unittest
 from settings_test import *
 

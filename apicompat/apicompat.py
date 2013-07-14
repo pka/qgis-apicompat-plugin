@@ -23,41 +23,27 @@
 from PyQt4.QtCore import *
 from qgis.core import *
 
-
-class ApiCompat:
-
-    def __init__(self, iface):
-        pass
-
-    def initGui(self):
-        pass
-
-    def unload(self):
-        pass
-
-    def run(self):
-        pass
-
-
-from decorators import *
-
-def vectorapiv1():
-  return not hasattr(QgsVectorLayer, 'getFeatures')
-
-if vectorapiv1():
-    @add_method(QgsVectorLayer)
-    def getFeatures(self):
-        self.select([])
-        return self
-
 import sip
+import __builtin__
 
 def sipv1():
     return sip.getapi("QVariant") == 1
 
+__builtin__.sipv1 = sipv1
+
 if sipv1():
-    def strlist(qstringlist):
-        return list(qstringlist)
+    if __name__ == "apicompat.apicompat":
+        #We are in the apicompat plugin
+        import sipv1.compat
+        import sipv1.vectorapi
+    else:
+        #Check if apicompat plugin is loaded
+        if not hasattr(QgsVectorLayer, 'getFeatures'):
+            from PyQt4.QtGui import QMessageBox
+            QMessageBox.critical(None, "Load Error " + __name__, 'Please install the plugin "apicompat" first')
+            #raise Exception('Please install the plugin "apicompat" first')
 else:
+    #Define backwards compatibility functions
     def strlist(strlist):
         return strlist
+    __builtin__.strlist = strlist

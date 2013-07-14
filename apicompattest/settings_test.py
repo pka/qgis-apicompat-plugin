@@ -1,10 +1,6 @@
 import unittest
 from PyQt4.QtCore import *
 from qgis.core import *
-import sip
-
-def sipv1():
-    return sip.getapi("QVariant") == 1
 
 class TestSettings(unittest.TestCase):
 
