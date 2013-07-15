@@ -44,7 +44,7 @@ def pyfloat(qvar):
     return float(val)
 __builtin__.pyfloat = pyfloat
 def pystringlist(qvar):
-    return list(qvar.toStringList())
+    return list(map(lambda s: unicode(s), qvar.toStringList()))
 __builtin__.pystringlist = pystringlist
 def pybytearray(qvar):
     return bytearray(qvar.toByteArray())

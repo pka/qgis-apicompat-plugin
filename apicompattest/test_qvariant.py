@@ -48,6 +48,7 @@ class TestQvariant(unittest.TestCase):
         self.settings.setValue("qvartest", ["a", "b"])
         qvar = self.settings.value("qvartest")
         self.assertEqual(type(pystringlist(qvar)), list)
+        self.assertEqual(type(pystringlist(qvar)[0]), unicode)
         self.assertEqual(pystringlist(qvar), ["a", "b"])
 
         #TODO: pybytearray
