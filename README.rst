@@ -77,15 +77,12 @@ Before::
 
 After::
 
-     # If you are really confident the variant is the type you expect, just use it
-    value = variantValue 
-
     # Best option to ensure value has the same type as in original code
-    value = float(variantValue)  
+    value = pyfloat(variantValue)
  
     # To handle conversion errors
     try: 
-        value=float(variantValue)
+        value=pyfloat(variantValue)
     except:
         handleError()
 

@@ -57,7 +57,7 @@ else:
         return float(qvar)
     __builtin__.pyfloat = pyfloat
     def pystringlist(qvar):
-        return stringlist(qvar)
+        return list(qvar)
     __builtin__.pystringlist = pystringlist
     def pybytearray(qvar):
         return bytearray(qvar)

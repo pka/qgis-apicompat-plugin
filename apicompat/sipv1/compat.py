@@ -32,13 +32,19 @@ def pylist(qvar):
     return list(qvar.toList())
 __builtin__.pylist = pylist
 def pyint(qvar):
-    return int(qvar.toInt())
+    val, ok = qvar.toInt()
+    if not ok:
+        raise ValueError('QVariant conversion error')
+    return int(val)
 __builtin__.pyint = pyint
 def pyfloat(qvar):
-    return float(qvar.toFloat())
+    val, ok = qvar.toFloat()
+    if not ok:
+        raise ValueError('QVariant conversion error')
+    return float(val)
 __builtin__.pyfloat = pyfloat
 def pystringlist(qvar):
-    return stringlist(qvar.toStringList())
+    return list(qvar.toStringList())
 __builtin__.pystringlist = pystringlist
 def pybytearray(qvar):
     return bytearray(qvar.toByteArray())
