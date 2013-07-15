@@ -32,7 +32,9 @@ import apicompat
 
 import sip
 import unittest
-from settings_test import *
+from test_qvariant import *
+from test_qstring import *
+from test_vectorapi import *
 
 
 class ApiCompatTest:
@@ -71,8 +73,10 @@ class ApiCompatTest:
         text.append("QGIS " + QGis.QGIS_VERSION)
         text.append("SIP " + sip.SIP_VERSION_STR + " API V" + str(sip.getapi("QVariant")))
         text.append("\n")
-        suite = unittest.TestLoader().loadTestsFromTestCase(TestSettings)
-        unittest.TextTestRunner(verbosity=2, stream=self.dlg).run(suite)
+        tests = unittest.TestSuite([unittest.TestLoader().loadTestsFromTestCase(TestQvariant),
+                                    unittest.TestLoader().loadTestsFromTestCase(TestQstring),
+                                    unittest.TestLoader().loadTestsFromTestCase(TestVectorapi)])
+        unittest.TextTestRunner(verbosity=2, stream=self.dlg).run(tests)
 
         # Run the dialog event loop
         result = self.dlg.exec_()
