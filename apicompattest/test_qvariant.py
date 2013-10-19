@@ -62,6 +62,11 @@ class TestQvariant(unittest.TestCase):
         self.assertEqual(type(pyobject(qvar)), float)
         self.assertAlmostEqual(pyobject(qvar), 3.14, 2)
 
+    def test_helpers_without_conversion(self):
+        self.assertEqual(pystring("abc"), "abc")
+        self.assertEqual(pystring("abc"), u"abc")
+        self.assertEqual(pystring(u"abc"), u"abc")
+
     def test_qvariant_exceptions(self):
         self.settings.setValue("qvartest", "xy")
         qvar = self.settings.value("qvartest")

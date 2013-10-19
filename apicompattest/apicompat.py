@@ -1,1 +1,0 @@
-../apicompat/apicompat.py
