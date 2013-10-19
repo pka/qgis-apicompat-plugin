@@ -20,9 +20,12 @@ For information about the API changes see:
 Include apicompat
 =================
 
-Include the latest apicompat.py in your plugin main directory::
+Include the latest apicompat library in your plugin main directory::
 
-  wget https://github.com/pka/qgis-apicompat-plugin/raw/master/apicompat/apicompat.py
+  #Download and unpack into /tmp
+  curl -L https://github.com/pka/qgis-apicompat-plugin/tarball/master | tar --strip-components=1 -xzv -C /tmp
+  #Copy library directory into your plugin main directory
+  cp -r /tmp/apicompattest/apicompat .
 
 And in your plugin main file add::
 
