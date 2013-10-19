@@ -28,7 +28,7 @@ And in your plugin main file add::
 
   import apicompat
 
-This adds global compatibility functions and checks wheter the plugin is loaded in QGIS 1.8.
+This adds global compatibility functions.
 
 
 SIP API upgrade

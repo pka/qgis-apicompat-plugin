@@ -32,16 +32,8 @@ def sipv1():
 __builtin__.sipv1 = sipv1
 
 if sipv1():
-    if __name__ == "apicompat.apicompat":
-        #We are in the apicompat plugin
-        import sipv1.compat
-        import sipv1.vectorapi
-    else:
-        #Check if apicompat plugin is loaded
-        if not hasattr(QgsVectorLayer, 'getFeatures'):
-            from PyQt4.QtGui import QMessageBox
-            QMessageBox.critical(None, "Load Error " + __name__, 'Please install the plugin "apicompat" first')
-            #raise Exception('Please install the plugin "apicompat" first')
+    import sipv1.compat
+    import sipv1.vectorapi
 else:
     #Define backwards compatibility functions
     def pystring(qvar):
